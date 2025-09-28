@@ -12,6 +12,8 @@ public class Tetromino {
 		NO_BLOCK, Z_SHAPE, S_SHAPE, I_SHAPE, T_SHAPE, O_SHAPE, L_SHAPE, J_SHAPE
 	};
 
+	private static final Random random = new Random();
+
 	private Tetrominoes tetrominoes;
 	private int coords[][];				// current shape of a tetromino
 	private int tetrominoTable[][][];
@@ -45,8 +47,7 @@ public class Tetromino {
 	}
 
 	public void setRandomShape() {
-		Random r = new Random();
-		int x = Math.abs(r.nextInt()) % 7 + 1;
+		int x = random.nextInt(7) + 1;
 		setShape(Tetrominoes.values()[x]);
 	}
 
